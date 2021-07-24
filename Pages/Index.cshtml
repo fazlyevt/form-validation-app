@@ -1,0 +1,61 @@
+﻿@page
+@model ValidationApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div class="form-register p-5 mb-4 bg-light rounded-3 text-center">
+    <h1 class="font-weight-bold mb-4">Регистрация</h1>
+    <form asp-antiforgery="true" method="post">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div class="form-floating mb-3 text-start">
+            <input type="text" class="form-control" asp-for="Login" placeholder="Login">
+            <label asp-for="Login"></label>
+            <span class="small text-danger" asp-validation-for="Login"></span>
+        </div>
+        <div class="form-floating mb-3 text-start">
+            <input type="email" class="form-control" asp-for="Email" placeholder="name@example.com">
+            <label asp-for="Email"></label>
+            <span class="small text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-floating mb-3 text-start">
+            <input type="tel" class="form-control" asp-for="user.Phone" placeholder="+7(999)999-9999">
+            <label asp-for="user.Phone"></label>
+            <span class="small text-danger" asp-validation-for="user.Phone"></span>
+        </div>
+        <div class="form-floating text-start">
+            <input type="password" class="form-control" asp-for="user.Password" placeholder="*">
+            <label asp-for="user.Password"></label>
+        </div>
+        <div class="form-floating mb-3 text-start">
+            <input type="password" class="form-control" asp-for="user.PasswordConfirmation" placeholder="*">
+            <label asp-for="user.PasswordConfirmation"></label>
+            <span class="small text-danger stacked" asp-validation-for="user.Password"></span>
+            <span class="small text-danger stacked" asp-validation-for="user.PasswordConfirmation"></span>
+        </div>
+        <div class="row g-1 mb-3 text-start">
+            <div class="form-floating col-sm-6">
+                <input type="text" class="form-control" asp-for="user.FirstName" placeholder="First Name">
+                <label asp-for="user.FirstName"></label>
+                <span class="small text-danger" asp-validation-for="user.FirstName"></span>
+            </div>
+            <div class="form-floating col-sm-6">
+                <input type="text" class="form-control" asp-for="user.LastName" placeholder="Last Name">
+                <label asp-for="user.LastName"></label>
+                <span class="small text-danger" asp-validation-for="user.LastName"></span>
+            </div>
+        </div>
+        <div class="form-floating mb-3 text-start">
+            <input type="date" class="form-control" asp-for="user.DateOfBirth" placeholder="DD/MM/YYYY">
+            <label asp-for="user.DateOfBirth"></label>
+            <span class="small text-danger" asp-validation-for="user.DateOfBirth"></span>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-dark btn-lg" type="submit">Зарегистрироваться</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

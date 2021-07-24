@@ -1,0 +1,32 @@
+﻿@page
+@model ValidationApp.Pages.SuccessModel
+@{
+    ViewData["Title"] = "Регистрация завершена";
+}
+<div class="bg-white">
+    <h2 class="font-weight-bold mb-4">Регистрация прошла успешно</h2>
+    <p>Данные пользователя:</p>
+    <div class="text-start">
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.user.Login): @Model.user.Login
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.user.Email): @Model.user.Email
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.user.Phone): @Model.user.Phone
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.user.FirstName): @Model.user.FirstName
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.user.LastName): @Model.user.LastName
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.user.DateOfBirth): @Model.user.DateOfBirth.ToString("d MMMM yyyy г.")
+            </li>
+        </ul>
+    </div>
+    <p>Вернуться <a asp-area="" asp-page="/Index">назад</a></p>
+</div>
