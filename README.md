@@ -18,9 +18,11 @@
 ```bash
 git clone https://github.com/fazlyevt/form-validation-app
 ```
-Затем перейти в папку проекта и запустить сервис
+Затем перейти в папку проекта и установить менеджер библиотек libman, восстаносить клиентские библиотеки и запустить сервис
 ```bash
 cd form-validation-app
+dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+libman restore
 dotnet run
 ```
 ## Демонстрация работы

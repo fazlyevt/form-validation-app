@@ -9,6 +9,22 @@
     {
       "library": "jquery.inputmask@5.0.6",
       "destination": "wwwroot/lib/jquery.inputmask/"
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.12",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "jquery-validate@1.19.3",
+      "destination": "wwwroot/lib/jquery-validation/dist",
+      "files": [
+        "jquery.validate.min.js",
+        "additional-methods.min.js"
+      ]
     }
   ]
 }
